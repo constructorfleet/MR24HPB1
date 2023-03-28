@@ -1,11 +1,11 @@
-from construct import Struct, Float64b, Int32ub, Enum, Int8ub, Int64ub
+from construct import Struct, Enum, Int8un
 
 threshold_gears = Struct(
-    "threshold" / Int8ub
+    "threshold" / Int8un
 )
 
 scene = Struct(
-    "scene" / Enum(Int8ub,
+    "scene" / Enum(Int8un,
                    DEFAULT=0x00,
                    AREA=0x01,
                    BATHROOM=0x02,
@@ -17,7 +17,7 @@ scene = Struct(
 )
 
 forced_unoccupied = Struct(
-    "forced_unoccupied" / Enum(Int8ub,
+    "forced_unoccupied" / Enum(Int8un,
                                SECONDS_0=0x00,
                                SECONDS_10=0x01,
                                SECONDS_30=0x02,

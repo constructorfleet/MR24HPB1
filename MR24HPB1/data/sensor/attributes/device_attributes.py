@@ -1,5 +1,4 @@
-
-from construct import Int8ub, Struct, Bytes
+from construct import Struct, Bytes
 
 device_id = Struct(
     "deviceId" / Bytes(12)

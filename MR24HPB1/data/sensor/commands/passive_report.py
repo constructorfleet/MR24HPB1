@@ -1,17 +1,18 @@
-from construct import Struct, Const, Int16ub, Int8ub, Enum, Switch, Float64b, Int32ub
+from construct import Struct, Int8un, Enum, Switch
 
 from MR24HPB1.types.attributes.device_attributes import device_id, software_version, hardware_version, protocol_version
 from MR24HPB1.types.attributes.radar_attributes import body_parameters_status, environment_state
 from MR24HPB1.types.attributes.system_attributes import threshold_gears, scene, forced_unoccupied
+from MR24HPB1.types.const import DEVICE_INFO
 
 report_device_identification = Struct(
-    "attribute" / Enum(Int8ub,
+    "attribute" / Enum(Int8un,
                        DEVICE_ID=0x01,
                        SOFTWARE_VERSION=0x02,
                        HARDWARE_VERSION=0x03,
                        PROTOCOL_VERSION=0x04
                        ),
-    "value" / Switch(lambda this: this.ttribute1,
+    "value" / Switch(lambda this: this.attribute,
                      {
                          "DEVICE_ID": device_id,
                          "SOFTWARE_VERSION": software_version,
@@ -21,12 +22,11 @@ report_device_identification = Struct(
 )
 
 report_sensor_identification = Struct(
-    "attribute" / Enum(Int8ub,
-
+    "attribute" / Enum(Int8un,
                        ENVIRONMENT_STATUs=0x05,
-                       MOVEMENT_PARAMETERS=0x6
+                       MOVEMENT_PARAMETERS=0x06
                        ),
-    "value" / Switch(lambda this: this.ttribute,
+    "value" / Switch(lambda this: this.attribute,
                      {
                          "ENVIRONMENT_STATUs": environment_state,
                          "MOVEMENT_PARAMETERS": body_parameters_status
@@ -34,12 +34,12 @@ report_sensor_identification = Struct(
 )
 
 report_system_identification = Struct(
-    "attribute" / Enum(Int8ub,
+    "attribute" / Enum(Int8un,
                        THRESHOLD=0x0C,
                        SCENE=0x10,
                        FORCED_UNOCCUPIED=0X12
                        ),
-    "value" / Switch(lambda this: this.attribue,
+    "value" / Switch(lambda this: this.attribute,
                      {
                          "THRESHOLD": threshold_gears,
                          "SCENE": scene,
@@ -54,8 +54,8 @@ report_map = {
 }
 
 passive_report = Struct(
-    "address1" / Enum(Int8ub,
-                      DEVICE_INFO=0x01,
+    "address1" / Enum(Int8un,
+                      DEVICE_INFO=DEVICE_INFO,
                       SENSOR_INFO=0x03,
                       SYSTEM_INFO=0x04
                       ),
