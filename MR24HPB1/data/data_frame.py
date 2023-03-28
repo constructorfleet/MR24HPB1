@@ -11,7 +11,7 @@ command_map = {
     "PASSIVE_REPORT": passive_report,
     "ACTIVE_REPORT": active_report
 }
-DataFrame = Struct(
+data_frame = Struct(
     "header" / Const(b"\x55"),
     "length" / Int16un,
     "function_code" / Enum(Int8un,

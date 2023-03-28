@@ -3,7 +3,6 @@ from construct import Struct, Int8un, Enum, Switch
 from MR24HPB1.data.attributes.device_attributes import device_id, software_version, hardware_version, protocol_version
 from MR24HPB1.data.attributes.radar_attributes import body_parameters_status, environment_state
 from MR24HPB1.data.attributes.system_attributes import threshold_gears, scene, forced_unoccupied
-from MR24HPB1.data.sensor.const import DEVICE_INFO
 
 report_device_identification = Struct(
     "attribute" / Enum(Int8un,
@@ -55,7 +54,7 @@ report_map = {
 
 passive_report = Struct(
     "address1" / Enum(Int8un,
-                      DEVICE_INFO=DEVICE_INFO,
+                      DEVICE_INFO=0x01,
                       SENSOR_INFO=0x03,
                       SYSTEM_INFO=0x04
                       ),
