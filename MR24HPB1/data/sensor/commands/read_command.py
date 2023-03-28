@@ -1,6 +1,6 @@
 from construct import Struct, Int8un, Enum, Switch
 
-from MR24HPB1.types.const import DEVICE_INFO
+from MR24HPB1.data.sensor.const import DEVICE_INFO
 
 read_device_identification = Struct(
     "attribute" / Enum(Int8un,
@@ -34,7 +34,7 @@ read_command_map = {
 
 read_command = Struct(
     "address1" / Enum(Int8un,
-                      DEVICE_INFO=DEVICE_INFO,
+                      DEVICE_INFO=0x01,
                       SENSOR_INFO=0x02,
                       SYSTEM_INFO=0x04
                       ),

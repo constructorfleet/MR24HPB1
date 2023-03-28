@@ -1,7 +1,7 @@
 from construct import Struct, Int8un, Enum, Switch, Int64un
 
-from MR24HPB1.types.attributes.radar_attributes import environment_state, body_parameters_status, direction_state
-from MR24HPB1.types.const import DEVICE_INFO
+from MR24HPB1.data.sensor.attributes.radar_attributes import environment_state, body_parameters_status, direction_state
+from MR24HPB1.data.sensor.const import DEVICE_INFO
 
 report_device_identification = Struct(
     "software_version" / Int64un

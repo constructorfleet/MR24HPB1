@@ -1,5 +1,11 @@
-from dependency_injector import containers, provider
+from dependency_injector import containers, providers
 
-class SensorContainer(containers.DeclarativeContaomer) {
+from MR24HPB1.data.sensor.sensor import Sensor
 
-}
+
+class SensorContainer(containers.DeclarativeContainer):
+    frame = providers.Singleton(
+
+    )
+    sensor = providers.Dependency(Sensor)
+

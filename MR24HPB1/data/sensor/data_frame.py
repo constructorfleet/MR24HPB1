@@ -1,9 +1,9 @@
 from construct import Struct, Const, Int16un, Int8un, Enum, Switch
 
-from MR24HPB1.types.commands.active_report import active_report
-from MR24HPB1.types.commands.passive_report import passive_report
-from MR24HPB1.types.commands.read_command import read_command
-from MR24HPB1.types.commands.write_command import write_command
+from MR24HPB1.data.sensor.commands.active_report import active_report
+from MR24HPB1.data.sensor.commands.passive_report import passive_report
+from MR24HPB1.data.sensor.commands.read_command import read_command
+from MR24HPB1.data.sensor.commands.write_command import write_command
 
 command_map = {
     "READ": read_command,

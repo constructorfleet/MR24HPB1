@@ -1,6 +1,6 @@
 from construct import Struct, Int8un, Enum, Switch
 
-from MR24HPB1.types.const import DEVICE_INFO
+from MR24HPB1.data.sensor.const import DEVICE_INFO
 
 write_system_identification = Struct(
     "attribute" / Enum(Int8un,
