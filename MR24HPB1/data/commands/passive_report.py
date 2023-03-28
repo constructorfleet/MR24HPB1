@@ -1,8 +1,8 @@
 from construct import Struct, Int8un, Enum, Switch
 
-from MR24HPB1.data.sensor.attributes.device_attributes import device_id, software_version, hardware_version, protocol_version
-from MR24HPB1.data.sensor.attributes.radar_attributes import body_parameters_status, environment_state
-from MR24HPB1.data.sensor.attributes.system_attributes import threshold_gears, scene, forced_unoccupied
+from MR24HPB1.data.attributes.device_attributes import device_id, software_version, hardware_version, protocol_version
+from MR24HPB1.data.attributes.radar_attributes import body_parameters_status, environment_state
+from MR24HPB1.data.attributes.system_attributes import threshold_gears, scene, forced_unoccupied
 from MR24HPB1.data.sensor.const import DEVICE_INFO
 
 report_device_identification = Struct(

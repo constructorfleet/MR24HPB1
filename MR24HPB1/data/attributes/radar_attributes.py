@@ -1,7 +1,7 @@
 from construct import Struct, Enum, Int8un, Int64un, Const, Float32l
 
 body_parameters_status = Struct(
-    "environment_status" / Float32l
+    "body_parameters" / Float32l
 )
 
 environment_state = Struct(

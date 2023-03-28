@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """Package entry point."""
-from MR24HPB1.data.sensor.data_frame import DataFrame
+from MR24HPB1.data.data_frame import DataFrame
 
 test_data = [
     0x055,
